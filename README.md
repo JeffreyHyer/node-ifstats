@@ -2,14 +2,12 @@
 
 A Node.js module used to retrieve detailed statistics about each network interface on a machine. Currently works on linux (and probably Unix, though untested). Should work on Mac OS X (also untested, feel free to test and submit an issue/PR with the results)
 
----
-
 ### Installation
-`npm install node-ifstats`
+`npm install ifstats`
 
 ### Usage/API
 ```
-var ifstats = require('node-ifstats');
+var ifstats = require('ifstats');
 ```
 
 
@@ -24,22 +22,22 @@ ifstats.getInterfaces(function(error, ifaces) {
 ```
 
 ifstats**.getInterfacesSync()**  
-*synchronous version of `interfaces()`*
+*synchronous version of `getInterfaces()`*
 ```
-var ifaces = ifstats.interfacesSync();
+var ifaces = ifstats.getInterfacesSync();
 // [ "eth0", "wlan0", "lo" ]
 ```
 
-ifstats**.getInterface(iface, callback)**
+ifstats**.getInterfaceStats(iface, callback)**
 ```
-ifstats.getInterface('eth0', function(error, iface) {
+ifstats.getInterfaceStats('eth0', function(error, iface) {
     // `iface` is an object describing the 'eth0' interface (see below)
 });
 ```
-ifstats.**getInterfaceSync(iface)**  
-*synchronous version of `getInterface()`*
+ifstats.**getInterfaceStatsSync(iface)**  
+*synchronous version of `getInterfaceStats()`*
 ```
-var iface = ifstats.getInterfaceSync('eth0');
+var iface = ifstats.getInterfaceStatsSync('eth0');
 ```
 ```
 // iface
@@ -84,5 +82,5 @@ var iface = ifstats.getInterfaceSync('eth0');
 + This release includes the following functions:
     + getInterfaces(callback)
     + getInterfacesSync()
-    + getInterface(iface, callback)
-    + getInterfaceSync(iface)
+    + getInterfaceStats(iface, callback)
+    + getInterfaceStatsSync(iface)
