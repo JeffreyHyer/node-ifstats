@@ -11,7 +11,7 @@ var ifstats = require('ifstats');
 ```
 
 
-ifstats**.getInterfaces(callback)**
+**getInterfaces(callback)**
 ```
 ifstats.getInterfaces(function(error, ifaces) {
     // ifaces is an array of strings denoting the ids
@@ -21,20 +21,20 @@ ifstats.getInterfaces(function(error, ifaces) {
 });
 ```
 
-ifstats**.getInterfacesSync()**  
+**getInterfacesSync()**  
 *synchronous version of `getInterfaces()`*
 ```
 var ifaces = ifstats.getInterfacesSync();
 // [ "eth0", "wlan0", "lo" ]
 ```
 
-ifstats**.getInterfaceStats(iface, callback)**
+**getInterfaceStats(iface, callback)**
 ```
 ifstats.getInterfaceStats('eth0', function(error, iface) {
     // `iface` is an object describing the 'eth0' interface (see below)
 });
 ```
-ifstats.**getInterfaceStatsSync(iface)**  
+**getInterfaceStatsSync(iface)**  
 *synchronous version of `getInterfaceStats()`*
 ```
 var iface = ifstats.getInterfaceStatsSync('eth0');
